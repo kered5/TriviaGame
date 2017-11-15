@@ -1,0 +1,89 @@
+
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
+
+}
+p{
+    padding:5px;
+}
+h2{
+    text-align: center;
+}
+h1{
+    text-align: center;
+}
+
+#logo{
+    margin-left: 40%;
+    height: 100px;
+    width :200px;
+
+}
+#wins{
+    font-size: 20px;
+
+
+}
+#losses{
+    font-size: 20px;
+}
+.status{
+    font-size: 25px;
+
+}
+
+.current{
+    font-size: 30px;
+    color: grey;
+
+}
+
+#random-number{
+    color:white;
+}
+
+.tubbies{
+
+   height:200px;
+   align-content: center;
+   
+   padding: 0px;
+
+}
+
+.vals{
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.tellys{
+    margin-top: 10px;
+    text-align: center;
+}
+
+#scoreboard{
+    margin-top:10px;
+
+    font-size: 400px;
+
+}
+
+#currentscore{
+    color:white;
+}
+
+#intro{
+    font-size: 16px;
+    background-color: lightgoldenrodyellow;
+    border: solid;
+    border-color: darkorange;
+}
+
+
+
+
