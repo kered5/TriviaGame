@@ -20,7 +20,23 @@
 		<h1>Crazy Capitals Trivia game</h1>
 	</div>
 </div>
+<div class ="row">
+<div  class="col-lg-12 initiate">
 
+	<img id="logo" src="assets/images/paris.jpg">;
+
+</div>
+</div>
+
+<div class ="row">
+<div id="init" class="col-lg-12">
+
+	Click to Begin
+
+</div>
+</div>
+
+<section class="wrapper hidden">
 <div class="row">
 	<div class ="col-lg-12">
 		<h2>Time Remaining: <span id="display"></span></h2>
@@ -61,16 +77,16 @@
   <div class ="row">
   	  	<div class="col-lg-2">
   	</div>
-<div class = "col-lg-2 answers1" value="false">
+<div class = "col-lg-2 answers1 className" data-question="1" value="false">
   Jangoon
 </div>
-<div class = "col-lg-2 answers1" value="false">
+<div class = "col-lg-2 answers1 className" data-question="1" value="false">
   Pinatubo
 </div>
-<div  class = "col-lg-2 answers1" value="true">
+<div  class = "col-lg-2 answers1 className" data-question="1" value="true">
   Rangoon
 </div>
-<div  class = "col-lg-2 answers1" value="false">
+<div  class = "col-lg-2 answers1 className" data-question="1" value="false">
   Myan Mar
 </div>
   	<div class="col-lg-2">
@@ -86,16 +102,16 @@
   <div class ="row">
   	  	<div class="col-lg-2">
   	</div>
-<div class = "col-lg-2 answers2" value="false">
+<div class = "col-lg-2 answers2 className" data-question="2" value="false">
   Aukland
 </div>
-<div class = "col-lg-2 answers2" value="false">
+<div class = "col-lg-2 answers2 className" data-question="2" value="false">
   Wellington
 </div>
-<div  class = "col-lg-2 answers2" value="true">
+<div  class = "col-lg-2 answers2 className" data-question="2" value="true">
   Canberra
 </div>
-<div  class = "col-lg-2 answers2" value="false">
+<div  class = "col-lg-2 answers2 className" data-question="2" value="false">
   Kiwi
 </div>
   	<div class="col-lg-2">
@@ -283,22 +299,44 @@
 	<div class="col-lg-4"></div>
 
 </div>
+</section>
 
-<div class = "col-lg-3">
-</div>
+<div class="results hidden">
 
-<div class = "col-lg-3 results">
+<div class="row">
+<div class = "col-lg-3"></div>
+
+<div id="right" class = "col-lg-3 results">
   Correct:  <span id="correct"></span>
 </div>
 
-<div class = "col-lg-3 results">
-  Wrong <span id="wrong"></span>
+<div id="notright" class = "col-lg-3 results">
+  Wrong: <span id="wrong"></span>
 </div>
-<div class = "col-lg-3">
+<div class = "col-lg-3"></div>
+
 </div>
+
+</div>
+
+	<div class="reinit hidden">
+<div class="row">
+	
+	<div class="col-lg-4"></div>
+	<div class="col-lg-4"><img id="logo" src="assets/images/paris.gif"></div>
+	<div class="col-lg-4"></div>
+</div>
+<div class="row">
+	
+	<div class="col-lg-4"></div>
+	<div class="col-lg-4">Click to Play again</div>
+	<div class="col-lg-4"></div>
+</div>
+
+</div>
+
 
 <br><br>
-
 
 
 

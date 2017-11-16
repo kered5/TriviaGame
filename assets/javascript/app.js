@@ -8,7 +8,14 @@ var wrong=0;
 var clockRunning = false;
 var time=10;
 
+
+
 function endgame(){
+  $(".wrapper").addClass("hidden");
+  $(".results").removeClass("hidden");
+  $(".reinit").removeClass("hidden");
+
+      // $("#init").removeClass("hidden");
 	    clearInterval(intervalId);
     clockRunning = false;
 	 $("#display").text("Over");
@@ -23,10 +30,55 @@ function endgame(){
     $("#correct").text(correct);
     $("#wrong").text(wrong);
 	}
+  maingame();
+
+
 }
 
-setTimeout(endgame, 1000 * 10);
 
+
+function maingame(){
+  console.log("start of game")
+operator=false;
+ans =[false, false,false,false, false,false,false, false,false,false] ;
+correct=0;
+wrong=0;
+clockRunning = false;
+time=10;
+
+      $(".initiate").on("click", function() {    
+
+      $(".wrapper").removeClass("hidden");
+      $(".initiate").addClass("hidden");
+      $("#init").addClass("hidden");
+
+    if (!clockRunning) {
+        intervalId = setInterval(count, 1000);
+        clockRunning = true;
+    }
+
+      });
+
+      $(".reinit").on("click", function() {    
+
+      $(".wrapper").removeClass("hidden");
+      $(".initiate").addClass("hidden");
+      $("#init").addClass("hidden");
+      $(".reinit").addClass("hidden");
+      $(".results").addClass("hidden");
+
+for (i=0; i<10; i++){
+      $(".answers"+i).removeClass("selected");
+      // $(".answers1").removeClass("selected");
+      // $(".answers2").removeClass("selected");
+      // $(".answers3").removeClass("selected");
+      // $(".answers4").removeClass("selected");
+      // $(".answers5").removeClass("selected");
+      // $(".answers6").removeClass("selected");
+      // $(".answers7").removeClass("selected");
+      // $(".answers8").removeClass("selected");
+      // $(".answers9").removeClass("selected");
+    }
 
 
     if (!clockRunning) {
@@ -34,9 +86,15 @@ setTimeout(endgame, 1000 * 10);
         clockRunning = true;
     }
 
+      });
+
+
     function count() {
     time--;
     $("#display").text(time);
+    if (time==0){
+      endgame();
+    }
   }
 
       		$(".answers0").on("click", function() {    
@@ -64,7 +122,11 @@ setTimeout(endgame, 1000 * 10);
       ans[2]=operator;
 
       });
-
+      // $(".className").on("click",function(){
+      //   console.log(this);
+      //   var whichQuestion = $(this).attr("data-question");
+      //   console.log(whichQuestion);
+      //   })
             $(".answers3").on("click", function() {    
       operator = $(this).attr("value");
       $(".answers3").removeClass("selected");
@@ -126,11 +188,11 @@ endgame();
 
       });
 
-
+}
      
-console.log("Im here");
 
 
+maingame();
 
 
     });
