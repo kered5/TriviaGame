@@ -4,6 +4,8 @@
 }
 body {
     font-family: "Comic Sans MS", cursive, sans-serif;
+    background-image: url("../images/128-169.jpg");
+    color: white;
 
 
 }
@@ -12,11 +14,36 @@ p{
 }
 h2{
     text-align: center;
+    font-size: 25px;
 }
 h1{
     text-align: center;
 }
 
+.question{
+    background-color: grey;
+}
+.selected{
+    background-color: blue;
+    color: yellow;
+}
+.answers0, .answers1, .answers2, .answers3, .answers4, .answers5, .answers6, .answers7, .answers8, .answers9{
+    text-align: center;
+    font-size: 20px;
+
+
+
+}
+
+#submit{
+    text-align: center;
+    background-color: orange;
+    font-size: 40px;
+}
+.results{
+    font-size: 30px;
+    text-align: center;
+}
 #logo{
     margin-left: 40%;
     height: 100px;
