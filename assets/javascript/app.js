@@ -6,7 +6,7 @@ var ans =[false, false,false,false, false,false,false, false,false,false] ;
 var correct=0;
 var wrong=0;
 var clockRunning = false;
-var time=10;
+var time=30;
 
 
 
@@ -30,7 +30,7 @@ function endgame(){
     $("#correct").text(correct);
     $("#wrong").text(wrong);
 	}
-  maingame();
+  // maingame();
 
 
 }
@@ -44,7 +44,7 @@ ans =[false, false,false,false, false,false,false, false,false,false] ;
 correct=0;
 wrong=0;
 clockRunning = false;
-time=10;
+time=30;
 
       $(".initiate").on("click", function() {    
 
@@ -66,6 +66,13 @@ time=10;
       $("#init").addClass("hidden");
       $(".reinit").addClass("hidden");
       $(".results").addClass("hidden");
+
+      operator=false;
+ans =[false, false,false,false, false,false,false, false,false,false] ;
+correct=0;
+wrong=0;
+clockRunning = false;
+time=30;
 
 for (i=0; i<10; i++){
       $(".answers"+i).removeClass("selected");
@@ -98,7 +105,7 @@ for (i=0; i<10; i++){
   }
 
       		$(".answers0").on("click", function() {    
-      operator = $(this).attr("value");
+      operator = $(this).attr("value") == "true";
       $(".answers0").removeClass("selected");
       $(this).addClass("selected");
       ans[0]=operator;
@@ -107,7 +114,7 @@ for (i=0; i<10; i++){
 
 
       		$(".answers1").on("click", function() {    
-      operator = $(this).attr("value");
+      operator = $(this).attr("value") == "true";
       $(".answers1").removeClass("selected");
       $(this).addClass("selected");
       ans[1]=operator;
@@ -116,7 +123,7 @@ for (i=0; i<10; i++){
       });
 
             $(".answers2").on("click", function() {    
-      operator = $(this).attr("value");
+      operator = $(this).attr("value") == "true";
       $(".answers2").removeClass("selected");
       $(this).addClass("selected");
       ans[2]=operator;
@@ -128,7 +135,7 @@ for (i=0; i<10; i++){
       //   console.log(whichQuestion);
       //   })
             $(".answers3").on("click", function() {    
-      operator = $(this).attr("value");
+      operator = $(this).attr("value")== "true";
       $(".answers3").removeClass("selected");
       $(this).addClass("selected");
       ans[3]=operator;
@@ -136,7 +143,7 @@ for (i=0; i<10; i++){
       });
 
             $(".answers4").on("click", function() {    
-      operator = $(this).attr("value");
+      operator = $(this).attr("value")== "true";
       $(".answers4").removeClass("selected");
       $(this).addClass("selected");
       ans[4]=operator;
@@ -144,7 +151,7 @@ for (i=0; i<10; i++){
       });
 
             $(".answers5").on("click", function() {    
-      operator = $(this).attr("value");
+      operator = $(this).attr("value")== "true";
       $(".answers5").removeClass("selected");
       $(this).addClass("selected");
       ans[5]=operator;
@@ -152,7 +159,7 @@ for (i=0; i<10; i++){
       });
 
             $(".answers6").on("click", function() {    
-      operator = $(this).attr("value");
+      operator = $(this).attr("value")== "true";
       $(".answers6").removeClass("selected");
       $(this).addClass("selected");
       ans[6]=operator;
@@ -160,7 +167,7 @@ for (i=0; i<10; i++){
       });
 
             $(".answers7").on("click", function() {    
-      operator = $(this).attr("value");
+      operator = $(this).attr("value")== "true";
       $(".answers7").removeClass("selected");
       $(this).addClass("selected");
       ans[7]=operator;
@@ -168,7 +175,7 @@ for (i=0; i<10; i++){
       });
 
             $(".answers8").on("click", function() {    
-      operator = $(this).attr("value");
+      operator = $(this).attr("value")== "true";
       $(".answers8").removeClass("selected");
       $(this).addClass("selected");
       ans[8]=operator;
@@ -176,7 +183,7 @@ for (i=0; i<10; i++){
       });
 
             $(".answers9").on("click", function() {    
-      operator = $(this).attr("value");
+      operator = $(this).attr("value")== "true";
       $(".answers9").removeClass("selected");
       $(this).addClass("selected");
       ans[9]=operator;
