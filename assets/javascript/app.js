@@ -1,6 +1,6 @@
  $(document).ready(function() {
 
-
+// Declare Variables
 var operator=false;
 var ans =[false, false,false,false, false,false,false, false,false,false] ;
 var correct=0;
@@ -9,16 +9,20 @@ var clockRunning = false;
 var time=30;
 
 
-
+// funtion to finish the game gets called by either a timeout or a submit
 function endgame(){
+  // hide the questions
   $(".wrapper").addClass("hidden");
+  //show the results by removing them from the hidden class
   $(".results").removeClass("hidden");
+  //Remove the restart button from the hidden class
   $(".reinit").removeClass("hidden");
 
-      // $("#init").removeClass("hidden");
+      // Stop the counter
 	    clearInterval(intervalId);
     clockRunning = false;
 	 $("#display").text("Over");
+   //Read each of the array elements in answer and keep a count of right and wring answers
 	for (i=0; i<10; i++){
 		console.log(ans[i]);
 	if(ans[i]){
@@ -27,10 +31,11 @@ function endgame(){
 		else{
 			wrong++;
 		}
+    //Output the results to the html IDs
     $("#correct").text(correct);
     $("#wrong").text(wrong);
 	}
-  // maingame();
+
 
 
 }
@@ -39,26 +44,28 @@ function endgame(){
 
 function maingame(){
   console.log("start of game")
+  //Rest the variables
 operator=false;
 ans =[false, false,false,false, false,false,false, false,false,false] ;
 correct=0;
 wrong=0;
 clockRunning = false;
 time=30;
-
+ //Listen for the main click image to be pressed to initiate the game
       $(".initiate").on("click", function() {    
-
+      // Remove the questions from the hidden class so that the user can see them
       $(".wrapper").removeClass("hidden");
+      //Hide the initiation elements by adding them to the hidden class
       $(".initiate").addClass("hidden");
       $("#init").addClass("hidden");
-
+    //Setup the counter to count in seconds
     if (!clockRunning) {
         intervalId = setInterval(count, 1000);
         clockRunning = true;
     }
 
       });
-
+//This is the re-init function to restart the game.
       $(".reinit").on("click", function() {    
 
       $(".wrapper").removeClass("hidden");
@@ -67,27 +74,22 @@ time=30;
       $(".reinit").addClass("hidden");
       $(".results").addClass("hidden");
 
-      operator=false;
+
+//Reset variables.
+operator=false;
 ans =[false, false,false,false, false,false,false, false,false,false] ;
 correct=0;
 wrong=0;
 clockRunning = false;
 time=30;
 
+//Reset all of the answer buttons on all rows
 for (i=0; i<10; i++){
       $(".answers"+i).removeClass("selected");
-      // $(".answers1").removeClass("selected");
-      // $(".answers2").removeClass("selected");
-      // $(".answers3").removeClass("selected");
-      // $(".answers4").removeClass("selected");
-      // $(".answers5").removeClass("selected");
-      // $(".answers6").removeClass("selected");
-      // $(".answers7").removeClass("selected");
-      // $(".answers8").removeClass("selected");
-      // $(".answers9").removeClass("selected");
+
     }
 
-
+//Initialize clock to 1 second intervals
     if (!clockRunning) {
         intervalId = setInterval(count, 1000);
         clockRunning = true;
@@ -95,7 +97,7 @@ for (i=0; i<10; i++){
 
       });
 
-
+//Cpunting function...run the endgame function when the time reaches 0
     function count() {
     time--;
     $("#display").text(time);
@@ -103,11 +105,15 @@ for (i=0; i<10; i++){
       endgame();
     }
   }
-
-      		$(".answers0").on("click", function() {    
+      //Series of clicks, one for each question
+      		$(".answers0").on("click", function() {  
+          //Sget the true/false value for the clicked button  
       operator = $(this).attr("value") == "true";
+      //Reset all of the buttons in the row
       $(".answers0").removeClass("selected");
+      //Add the button to the selected class and chance the color attibutes in CSS
       $(this).addClass("selected");
+      //Add the True/False data to the correct element of the ans array
       ans[0]=operator;
 
       });
@@ -129,11 +135,7 @@ for (i=0; i<10; i++){
       ans[2]=operator;
 
       });
-      // $(".className").on("click",function(){
-      //   console.log(this);
-      //   var whichQuestion = $(this).attr("data-question");
-      //   console.log(whichQuestion);
-      //   })
+
             $(".answers3").on("click", function() {    
       operator = $(this).attr("value")== "true";
       $(".answers3").removeClass("selected");
@@ -189,7 +191,7 @@ for (i=0; i<10; i++){
       ans[9]=operator;
 
       });
-
+//Once the user is happy with the answers the submit button ends the game
       $("#submit").on("click", function() {    
 endgame();
 
